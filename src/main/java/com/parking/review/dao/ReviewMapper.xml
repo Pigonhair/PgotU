@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.parking.review.dao.ReviewMapper">  
+	<select id="allReviewList" parameterType="map" resultType="reviewVO">
+	SELECT
+	*
+	FROM(SELECT
+	a.*,
+	rownum rnum
+	FROM (SELECT
+	*
+	FROM
+	reviewBoard r
+	INNER JOIN parking p ON (r.park_id = p.park_id)
+	<if test="keyword != '' and keyfield == 'park_id'">
+		WHERE r.review_num IS NOT NULL
+		AND (r.park_id LIKE '%' || #{keyword} || '%')
+	</if>
+	ORDER BY r.park_id)a)
+	<![CDATA[
+	 WHERE rnum >= #{start} AND rnum <= #{end}
+	]]>
+	</select>
+	
+	<select id="selectCount" parameterType="map"
+		resultType="integer">
+		SELECT
+		COUNT(*)
+		FROM reviewBoard r
+		INNER JOIN parking p ON (r.park_id = p.park_id)
+		<where>
+			<if test="keyword != '' and keyfield == 'park_id'">
+				r.review_num IS NOT NULL
+				AND (r.park_id LIKE '%' || #{keyword} || '%')
+			</if>
+		</where>
+	</select>
+</mapper>

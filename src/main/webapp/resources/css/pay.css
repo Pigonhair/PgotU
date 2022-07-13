@@ -1,0 +1,89 @@
+@charset "UTF-8";
+
+.t_center {
+	text-align: center !important;
+}
+
+.stitle01 {
+	margin-bottom: 15px;
+	font-size: 26px;
+	color: #151515;
+	font-weight: 500;
+	vertical-align: middle;
+}
+
+.stitle01 span {
+	font-size: 16px;
+	font-weight: 300;
+	display: inline-block;
+	vertical-align: middle;
+	padding-left: 15px;
+}
+
+.table01 {
+	width: 100%;
+	border-top: 2px solid #252628;
+	text-align: left;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.table01 td {
+	border-left: 1px solid #d8d8da;
+}
+
+.table01 th, .table01 td {
+	height: 60px;
+	padding: 10px;
+	border-bottom: 1px solid #d8d8da;
+	color: #151515;
+	vertical-align: middle;
+}
+
+#payBtn {
+	cursor:pointer;
+	position: relative;
+	width: 210px;
+	height: 64px;
+	border-radius: 5px;
+	font-size: 25px;
+	color: #fff;
+	line-height: 64px;
+	text-align: center;
+	background: #000000;
+	font-family: "jua";
+	margin-left: 450px;
+	margin-top: 50px;
+}
+
+#payBtn1 {
+	cursor:pointer;
+	position: relative;
+	width: 210px;
+	height: 64px;
+	border-radius: 5px;
+	font-size: 25px;
+	color: #fff;
+	line-height: 64px;
+	text-align: center;
+	background: #000000;
+	font-family: "jua";
+	margin-top: 50px;
+}
+
+#payBtn2 {
+	position: relative;
+	width: 260px;
+	height: 64px;
+	border-radius: 5px;
+	font-size: 25px;
+	color: #fff;
+	line-height: 64px;
+	text-align: center;
+	background: #000000;
+	font-family: "jua";
+	margin-top: 50px;
+}

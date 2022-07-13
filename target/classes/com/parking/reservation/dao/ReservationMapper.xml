@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.parking.reservation.dao.ReservationMapper">
+
+   <select id="selectCheckParkingList" resultType="java.lang.Integer" parameterType="ReservationVO">   
+      <![CDATA[
+         SELECT COUNT(*) 
+         FROM RESERVATION 
+         WHERE PARK_ID=#{park_id} AND TO_DATE(#{start_time}, 'HH24:MI') < TO_DATE(END_TIME, 'HH24:MI') 
+         AND TO_DATE(#{end_time}, 'HH24:MI') > TO_DATE(START_TIME, 'HH24:MI')
+      ]]>   
+   </select>
+   
+<!--    <select id="selectCheckParkingList2" resultType="java.lang.Integer" parameterType="ReservationVO">    -->
+<!--       <![CDATA[ -->
+<!--       SELECT COUNT(*)  -->
+<!--       FROM RESERVATION  -->
+<!--       WHERE PARK_ID=#{park_id}  -->
+<!--       AND TO_DATE(#{start_time}, 'HH24:MI') > TO_DATE(START_TIME,'HH24:MI')  -->
+<!--       AND TO_DATE(#{end_time}, 'HH24:MI') > TO_DATE(END_TIME, 'HH24:MI') -->
+<!--       ]]>    -->
+<!--    </select> -->
+
+</mapper>
